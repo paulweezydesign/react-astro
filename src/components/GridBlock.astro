@@ -1,0 +1,41 @@
+---
+  import TickerCard from './TickerCard.astro';
+---
+
+<style>
+  @import "../styles/globals.css";
+  .grid {
+    display: grid;
+    gap: 10px;
+    margin:10px 0 10px 10px;
+    grid-template-rows: repeat(auto-fill,40px);
+    grid-auto-rows: minmax(40px,min-content);
+    grid-auto-columns:1fr;
+    grid-template-areas: "a" "b";
+
+    & .a {
+      grid-area: a;
+    }
+
+    & .b {
+      grid-area: b;
+    }
+    
+  }
+</style>
+
+<div class="grid">
+
+  <div class="a">
+    <TickerCard
+      ticker="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    />
+  </div>
+
+  <div class="b">
+    <TickerCard
+      ticker="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    />
+  </div>
+
+</div>

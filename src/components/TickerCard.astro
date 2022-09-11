@@ -1,0 +1,41 @@
+---
+import Ticker from './Ticker.jsx';
+
+const { ticker } = Astro.props
+
+---
+
+<style>
+@import "../styles/globals.css";
+  .card {
+    position: relative;
+    width:100%;
+    height:100%;
+    overflow: auto;
+    background: #1d2839;
+    color: #fff;
+    border-radius:15px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+
+ 
+  .ticker {
+    font-size: 15px;
+    background: #000;
+    white-space:nowrap;
+    overflow:hidden;
+    line-height:40px;
+    height:40px;
+    text-align: left;
+    width:100%;
+    align-self: flex-end;
+  }
+</style>
+
+<div class={`card`}>
+  <div class="ticker">
+    <Ticker ticker={ticker} move={true} client:load />
+  </div>
+</div>
